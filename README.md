@@ -59,6 +59,7 @@ var v3 = new Vector3D(-2, -2, 1);
 // Calculate its magnitude
 Console.WriteLine($"The magnitude of v3 is {VectorOperations.Magnitude(v3)}")
 // => The magnitude of v3 is 3.0
+```
 
 ## License
 
