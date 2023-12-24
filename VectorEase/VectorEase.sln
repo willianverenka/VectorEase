@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VectorEase", "VectorEase.csproj", "{579C16F0-3B48-4414-A600-23053C322840}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VectorEase.Tests", "..\VectorEase.Tests\VectorEase.Tests.csproj", "{FB08A835-F3BD-4EF5-9F28-3CD5CC7893CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{579C16F0-3B48-4414-A600-23053C322840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579C16F0-3B48-4414-A600-23053C322840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579C16F0-3B48-4414-A600-23053C322840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579C16F0-3B48-4414-A600-23053C322840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB08A835-F3BD-4EF5-9F28-3CD5CC7893CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB08A835-F3BD-4EF5-9F28-3CD5CC7893CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB08A835-F3BD-4EF5-9F28-3CD5CC7893CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB08A835-F3BD-4EF5-9F28-3CD5CC7893CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52659F06-BC4F-41E3-B63A-DBB67FA01C7B}
+	EndGlobalSection
+EndGlobal
