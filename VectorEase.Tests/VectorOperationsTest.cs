@@ -137,10 +137,24 @@ namespace vector_lib.Tests
             var v1 = new Vector2D(0, -20);
             // Act
             var result = VectorOperations.MultiplyVector(5, v1).ToList();
-            //Assert
+            // Assert
 
             result[0].Should().Be(0);
             result[1].Should().Be(-100);
+        }
+
+        [Fact]
+        public void VectorOperations_OrtographicProjection_ReturnsCorrectValue()
+        {
+            // Arrange
+            var v1 = new Vector3D(1, 2, -2);
+            var vDirection = new Vector3D(3, 2, 1);
+            // Act
+            var result = VectorOperations.OrtographicProjection(v1, vDirection).ToList();
+            // Assert
+            result[0].Should().BeApproximately(0.3571 * 3, 0.1);
+            result[1].Should().BeApproximately(0.3571 * 2, 0.1);
+            result[2].Should().BeApproximately(0.3571 * 1, 0.1);
         }
     }
 }

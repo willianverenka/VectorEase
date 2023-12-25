@@ -82,14 +82,6 @@ namespace VectorEase.Utility
             return new Vector3D(vector2D.A * value, vector2D.B * value, vector2D.C * value);
         }
 
-        public static Vector2D OrtographicProjection(Vector2D vector2D, Vector2D projectionDirectionVector2D)
-        {
-            // (dot product between the main vector and the direction vector / magnitude ** 2) * direction vector
-            double dotProduct = DotProduct(vector2D, projectionDirectionVector2D);
-            double magnitude = Magnitude(projectionDirectionVector2D);
-            double division = dotProduct / Math.Pow(magnitude, 2);
-            return MultiplyVector(division, projectionDirectionVector2D);
-        }
         public static Vector3D OrtographicProjection(Vector3D vector3D, Vector3D projectionDirectionVector3D)
         {
             // (dot product between the main vector and the direction vector / magnitude ** 2) * direction vector
