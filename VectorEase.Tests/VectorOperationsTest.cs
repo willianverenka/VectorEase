@@ -97,6 +97,26 @@ namespace vector_lib.Tests
             // Assert
             result.Should().BeApproximately(expected, 0.0001);
         }
+        [Theory]
+        [InlineData(1, 2, 1, 2, 3, 2, 1, 0, -1)]
+        [InlineData(5, 4, 3,1,0,1,4,-2,-4)]
+        public void VectorOperations_CrossProduct_ReturnsCorrectValue(double a, double b, double c, double a2,
+            double b2, double c2, double iExpected, double jExpected, double kExpected)
+        {
+            //Arrange
 
+            var v1 = new Vector3D(a, b, c);
+            var v2 = new Vector3D(a2, b2, c2);
+
+            // Act
+
+            var result = VectorOperations.CrossProduct(v1, v2).ToList();
+
+            // Assert
+
+            result[0].Should().Be(iExpected);
+            result[1].Should().Be(jExpected);
+            result[2].Should().Be(kExpected);
+        }
     }
 }
