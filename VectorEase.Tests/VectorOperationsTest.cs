@@ -67,5 +67,36 @@ namespace vector_lib.Tests
             // Assert
             result.Should().BeApproximately(expected, 0.0001);
         }
+        [Theory]
+        [InlineData(1, 1, 1, 1, 2)]
+        [InlineData(2, 0, 3, -10, 6)]
+        [InlineData(-5, 1, -2, -10, 0)]
+        public void VectorOperations_DotProduct2D_ReturnsCorrectValue(double a, double b, double a2, double b2, double expected)
+        {
+            // Arrange
+            var v1 = new Vector2D(a, b);
+            var v2 = new Vector2D(a2, b2);
+            // Act
+            var result = VectorOperations.DotProduct(v1, v2);
+
+            // Assert
+            result.Should().BeApproximately(expected, 0.0001);
+        }
+        [Theory]
+        [InlineData(1, 1, 1, 1, 4, 1, 6)]
+        [InlineData(2, 0, 3, -10, 6, -3, -29)]
+        [InlineData(-5, 1, -2, -10, 0, 3, 44)]
+        public void VectorOperations_DotProduct3D_ReturnsCorrectValue(double a, double b, double c, double a2, double b2, double c2, double expected)
+        {
+            // Arrange
+            var v1 = new Vector3D(a, b, c);
+            var v2 = new Vector3D(a2, b2, c2);
+            // Act
+            var result = VectorOperations.DotProduct(v1, v2);
+
+            // Assert
+            result.Should().BeApproximately(expected, 0.0001);
+        }
+
     }
 }
