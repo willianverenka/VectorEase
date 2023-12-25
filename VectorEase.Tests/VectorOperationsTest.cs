@@ -118,5 +118,29 @@ namespace vector_lib.Tests
             result[1].Should().Be(jExpected);
             result[2].Should().Be(kExpected);
         }
+        [Fact]
+        public void VectorOperations_Multiply2DVectors_ReturnsCorrectValue()
+        {
+            // Arrange
+            var v1 = new Vector2D(-2, -2);
+            // Act
+            var result = VectorOperations.MultiplyVector(3, v1).ToList();
+            //Assert
+
+            result[0].Should().Be(-6);
+            result[1].Should().Be(-6);
+        }
+        [Fact]
+        public void VectorOperations_Multiply3DVectors_ReturnsCorrectValue()
+        {
+            // Arrange
+            var v1 = new Vector2D(0, -20);
+            // Act
+            var result = VectorOperations.MultiplyVector(5, v1).ToList();
+            //Assert
+
+            result[0].Should().Be(0);
+            result[1].Should().Be(-100);
+        }
     }
 }
