@@ -1,6 +1,6 @@
 ﻿namespace VectorEase.Model
 {
-    public class Vector3D : Vector2D
+    public class Vector3D : Vector
     {
         public double C { get; init; }
         public Vector3D(double a, double b, double c) : base(a, b)
@@ -11,6 +11,6 @@
         {
             return new double[] { A, B, C };
         }
-        public override string VectorToString() => $"({A}, {B}, {C})";
+        public override string ToString() => $"({A}, {B}, {C})";
     }
 }

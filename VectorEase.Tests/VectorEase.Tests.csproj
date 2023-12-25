@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VectorEase\VectorEase.csproj" />
-    <ProjectReference Include="..\vetor-lib\VectorEase.csproj" />
   </ItemGroup>
 
 </Project>

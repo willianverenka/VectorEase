@@ -1,17 +1,14 @@
 ﻿namespace VectorEase.Model
 {
-    public class Vector2D : IVector
+    public class Vector2D : Vector
     {
-        public double A { get; init; }
-        public double B { get; init; }
-        public Vector2D(double a, double b)
+        public Vector2D(double a, double b) : base(a, b)
         {
-            A = a; B = b;
         }
-        public virtual double[] ToList()
+        public override double[] ToList()
         {
             return new double[] { A, B };
         }
-        public virtual string VectorToString() => $"({A}, {B})";
+        public override string ToString() => $"({A}, {B})";
     }
 }
