@@ -144,13 +144,13 @@ namespace vector_lib.Tests
         }
 
         [Fact]
-        public void VectorOperations_OrtographicProjection_ReturnsCorrectValue()
+        public void VectorOperations_OrthographicProjection_ReturnsCorrectValue()
         {
             // Arrange
             var v1 = new Vector3D(1, 2, -2);
             var vDirection = new Vector3D(3, 2, 1);
             // Act
-            var result = VectorOperations.OrtographicProjection(v1, vDirection).ToList();
+            var result = VectorOperations.OrthographicProjection(v1, vDirection).ToList();
             // Assert
             result[0].Should().BeApproximately(0.3571 * 3, 0.1);
             result[1].Should().BeApproximately(0.3571 * 2, 0.1);
