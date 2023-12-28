@@ -90,5 +90,19 @@ namespace VectorEase.Utility
             double division = dotProduct / Math.Pow(magnitude, 2);
             return MultiplyVector(division, projectionDirectionVector3D);
         }
+
+        public static double Distance(Vector2D v1, Vector2D v2)
+        {
+            var v1List = v1.ToList();
+            var v2List = v2.ToList();
+            return Math.Sqrt(v1List.Zip(v2List, (a, b) => Math.Pow(a - b, 2)).Sum());
+        }
+
+        public static double Distance(Vector3D v1, Vector3D v2)
+        {
+            var v1List = v1.ToList();
+            var v2List = v2.ToList();
+            return Math.Sqrt(v1List.Zip(v2List, (a, b) => Math.Pow(a - b, 2)).Sum());
+        }
     }
 }
