@@ -17,5 +17,6 @@ namespace VectorEase.Model
         }
         public abstract override string ToString();
         public abstract double[] ToList();
+        public abstract double GetComponent(int input);
     }
 }

@@ -12,5 +12,19 @@
             return new double[] { A, B, C };
         }
         public override string ToString() => $"({A}, {B}, {C})";
+        public override double GetComponent(int input)
+        {
+            switch (input)
+            {
+                case 0:
+                    return A;
+                case 1: 
+                    return B;
+                case 2:
+                    return C;
+                default:
+                    throw new ArgumentException("Invalid component for Vector3D.");
+            }
+        }
     }
 }
