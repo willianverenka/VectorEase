@@ -156,5 +156,31 @@ namespace vector_lib.Tests
             result[1].Should().BeApproximately(0.3571 * 2, 0.1);
             result[2].Should().BeApproximately(0.3571 * 1, 0.1);
         }
+
+        [Fact]
+        public void VectorOperations_Distance2D_ReturnsCorrectValue()
+        {
+            // Arrange
+            var v1 = new Vector2D(1, 3);
+            var v2 = new Vector2D(5, 2);
+            // Act
+            var result = VectorOperations.Distance(v1, v2);
+            // Assert
+            result.Should().BeApproximately(Math.Sqrt(17), 0.01);
+        }
+
+        [Fact]
+        public void VectorOperations_Distance3D_ReturnsCorrectValue()
+        {
+            // Arrange
+            var v1 = new Vector3D(1, 0, 5);
+            var v2 = new Vector3D(0, 2, 4);
+
+            // Act
+            var result = VectorOperations.Distance(v1, v2);
+
+            // Assert
+            result.Should().BeApproximately(Math.Sqrt(6), 0.01);
+        }
     }
 }
