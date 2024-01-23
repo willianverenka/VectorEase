@@ -1,20 +1,19 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using FluentAssertions;
+﻿using FluentAssertions;
 using VectorEase.Utility;
 
-namespace vector_lib.Tests
+namespace VectorEase.Tests
 {
-    public class VectorUtilityTests
+    public class MatrixUtilityTests
     {
         [Theory]
         [InlineData(1, 0, 0, 1, 1)]
         [InlineData(0, 0, 0, 0, 0)]
-        public void VectorUtility_SendValidMatrix_ReturnCorrectValue(int a, int b, int c, int d, int expected)
+        public void MatrixUtility_SendValidMatrix_ReturnCorrectValue(int a, int b, int c, int d, int expected)
         {
             // arrange
             double[,] matrix = new double[,] { {a, b}, {c,d} };
             // act
-            var result = VectorUtility.CalculateDeterminant(matrix);
+            var result = MatrixUtility.CalculateDeterminant(matrix);
             // assert
             result.Should().BeOfType(typeof(double));
             result.Should().Be(expected);
@@ -23,12 +22,12 @@ namespace vector_lib.Tests
         [InlineData(1, 2)]
         [InlineData(0,0)]
         [InlineData(4,4)]
-        public void VectorUtility_SendInvalidMatrix_ThrowArgumentException(int a, int b)
+        public void MatrixUtility_SendInvalidMatrix_ThrowArgumentException(int a, int b)
         {
             //arrange
             double[,] invalidMatrix = new double[a, b];
             // act
-            Action act = () => VectorUtility.CalculateDeterminant(invalidMatrix);
+            Action act = () => MatrixUtility.CalculateDeterminant(invalidMatrix);
             // assert
             act.Should().Throw<ArgumentException>();
         }
