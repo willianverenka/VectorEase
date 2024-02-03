@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using VectorEase.Utility;
-
-namespace VectorEase.Tests
+﻿namespace VectorEase.Tests
 {
     public class MatrixUtilityTests
     {

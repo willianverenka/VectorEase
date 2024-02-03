@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
-using VectorEase.Model;
-
-namespace vector_lib.Tests
+﻿namespace vector_lib.Tests
 {
     public class VectorTests
     {
-        private Vector2D _v2d;
-        private Vector3D _v3d;
+        private readonly Vector2D _v2d;
+        private readonly Vector3D _v3d;
         public VectorTests()
         {
             _v2d = new Vector2D(5, 2);
