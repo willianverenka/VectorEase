@@ -1,8 +1,4 @@
-﻿using FluentAssertions;
-using VectorEase.Model;
-using VectorEase.Utility;
-
-namespace vector_lib.Tests
+﻿namespace vector_lib.Tests
 {
     public class VectorOperationsTest
     {
@@ -181,6 +177,37 @@ namespace vector_lib.Tests
 
             // Assert
             result.Should().BeApproximately(Math.Sqrt(6), 0.01);
+        }
+        [Theory]
+        [InlineData(0, 0, 0, 0, 0)]          
+        [InlineData(1, 0, 0, 1, 1)]      
+        [InlineData(2, 3, 4, 1, 10)]        
+        [InlineData(-1, -1, 2, 2, 0)]     
+        [InlineData(0.5, 1.5, -1, 0, 1.5)]   
+        public void VectorOperations_Area_ReturnsCorrectValue(double a, double b, double a2, double b2, double expected)
+        {
+            var v1 = new Vector2D(a, b);
+            var v2 = new Vector2D(a2, b2);
+
+            var result = VectorOperations.Area(v1, v2);
+
+            result.Should().Be(expected);
+        }
+        [Theory]
+        [InlineData(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+        [InlineData(1, 0, 0, 0, 1, 0, 0, 0, 1, 1)]
+        [InlineData(2, 0, 0, 0, 3, 0, 0, 0, 4, 24)]
+        [InlineData(-1, -1, -1, 2, 2, 2, 0, 0, 0, 0)]
+        [InlineData(0.5, 1.5, 2, -1, 0, 1, 0, 0, -2, 3)]
+        public void VectorOperations_Volume_ReturnsCorrectValue(double a, double b, double c, double a2, double b2, double c2, double a3, double b3, double c3, double expected)
+        {
+            var v1 = new Vector3D(a, b, c);
+            var v2 = new Vector3D(a2, b2, c2);
+            var v3 = new Vector3D(a3, b3, c3);
+
+            var result = VectorOperations.Volume(v1, v2, v3);
+
+            result.Should().Be(expected);
         }
     }
 }
